@@ -1,0 +1,5 @@
+github "CosmicMind/Material" "2.15.0"
+github "CosmicMind/Motion" "1.4.0"
+github "TakeScoop/SwiftyButton" "0.8.0"
+github "ViccAlexander/Chameleon" "2.2.0"
+github "qiuncheng/FontAwesomeKit.Swift" "0.4.2"

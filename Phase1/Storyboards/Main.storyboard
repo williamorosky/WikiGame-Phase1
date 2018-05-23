@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JNq-pG-aVG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+        <array key="Roboto-Medium.ttf">
+            <string>Roboto-Medium</string>
+        </array>
+        <array key="Topic-Bold.ttf">
+            <string>Topic-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="TQr-HU-7B5">
+            <objects>
+                <navigationController id="JNq-pG-aVG" customClass="NavigationController" customModule="Phase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1Kr-2a-oNL">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="DarkPurple1"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="28"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                <color key="value" name="DarkPurple1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="KUQ-4B-kZv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ku-iy-YB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-811" y="235"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Phase1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B27-Wo-Nxk" customClass="PressableButton" customModule="Phase1">
+                                <rect key="frame" x="16" y="231" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="OXe-48-kLg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="Purple1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="Purple2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="I9H-ux-Wl0" kind="show" identifier="showGameMode" id="Iuk-fn-8Qy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="DarkPurple1"/>
+                        <constraints>
+                            <constraint firstItem="B27-Wo-Nxk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-44" id="GqT-eU-sTw"/>
+                            <constraint firstItem="B27-Wo-Nxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="c5u-e0-pug"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B27-Wo-Nxk" secondAttribute="trailing" constant="16" id="sva-c8-l5H"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2rS-Um-bSM"/>
+                    <connections>
+                        <outlet property="newGameButton" destination="B27-Wo-Nxk" id="MN9-fv-rdq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.4" y="233.43328335832086"/>
+        </scene>
+        <!--Pick Game Mode-->
+        <scene sceneID="zB0-tl-pIF">
+            <objects>
+                <viewController title="Pick Game Mode" id="I9H-ux-Wl0" customClass="GameModeViewController" customModule="Phase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nnD-0l-4XS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-SA-6fI" customClass="PressableButton" customModule="Phase1">
+                                <rect key="frame" x="16" y="241" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Vyt-vb-wgb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                <state key="normal" title="Fastest to Goal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="Purple1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="Purple2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="nxh-FU-7Lq" kind="show" identifier="timeBasedGame" id="8jq-QJ-FOi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfO-7y-6Dc" customClass="PressableButton" customModule="Phase1">
+                                <rect key="frame" x="16" y="309" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="NEY-2k-6xt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                <state key="normal" title="Fewest Taps to Goal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="Purple1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="Purple2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="nxh-FU-7Lq" kind="show" identifier="tapBasedGame" id="wxv-xh-syW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="DarkPurple1"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mNa-SA-6fI" firstAttribute="top" secondItem="U8A-Vx-50b" secondAttribute="top" constant="241" id="FgU-ti-yXX"/>
+                            <constraint firstItem="U8A-Vx-50b" firstAttribute="trailing" secondItem="ZfO-7y-6Dc" secondAttribute="trailing" constant="16" id="Oaq-qM-F4a"/>
+                            <constraint firstItem="mNa-SA-6fI" firstAttribute="leading" secondItem="U8A-Vx-50b" secondAttribute="leading" constant="16" id="OsK-IZ-O9W"/>
+                            <constraint firstItem="ZfO-7y-6Dc" firstAttribute="leading" secondItem="U8A-Vx-50b" secondAttribute="leading" constant="16" id="ZXY-gw-BcG"/>
+                            <constraint firstItem="U8A-Vx-50b" firstAttribute="trailing" secondItem="mNa-SA-6fI" secondAttribute="trailing" constant="16" id="bX4-bv-XO5"/>
+                            <constraint firstItem="ZfO-7y-6Dc" firstAttribute="top" secondItem="mNa-SA-6fI" secondAttribute="bottom" constant="15" id="jZS-vQ-KPN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U8A-Vx-50b"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="tapBasedButton" destination="ZfO-7y-6Dc" id="3g4-cr-IBw"/>
+                        <outlet property="timeBasedButton" destination="mNa-SA-6fI" id="TQZ-Ti-6gR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MIt-1O-QiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="234"/>
+        </scene>
+        <!--Setup Game-->
+        <scene sceneID="F1m-NH-naa">
+            <objects>
+                <viewController title="Setup Game" id="nxh-FU-7Lq" customClass="SetupGameViewController" customModule="Phase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TvC-6T-YB0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrq-ym-agh" customClass="PressableButton" customModule="Phase1">
+                                <rect key="frame" x="16" y="521" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="9ny-nd-2Q4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                <state key="normal" title="Start Game!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="Purple1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="Purple2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-OK-TCe">
+                                <rect key="frame" x="16" y="135" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SFh-Ar-y5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbb-Hv-Kan">
+                                <rect key="frame" x="16" y="242" width="343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="0tE-P7-Mcp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAD-gm-7Co" customClass="GameTextView" customModule="Phase1" customModuleProvider="target">
+                                <rect key="frame" x="16" y="164" width="343" height="58"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="Per-71-Cpg"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placeholder"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underLineColor">
+                                        <color key="value" red="0.36470588240000001" green="0.56470588239999997" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="underLineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uE-of-n8N" customClass="GameTextView" customModule="Phase1" customModuleProvider="target">
+                                <rect key="frame" x="16" y="272" width="343" height="58"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="f5L-Xb-fzU"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placeholder"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="dividerThickness">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxLines">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="underLineColor">
+                                        <color key="value" red="0.2189697921" green="0.82581216099999999" blue="0.66439467669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="underLineWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dH9-4Z-6rE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rKJ-Cy-HDU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                                <color key="textColor" name="Purple1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="DarkPurple1"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="trailing" secondItem="Pbb-Hv-Kan" secondAttribute="trailing" constant="16" id="1D3-51-KKv"/>
+                            <constraint firstItem="dH9-4Z-6rE" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" id="1Xc-gk-pbe"/>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="trailing" secondItem="Jrq-ym-agh" secondAttribute="trailing" constant="16" id="3Yg-9e-gVh"/>
+                            <constraint firstItem="XDt-OK-TCe" firstAttribute="top" secondItem="eXj-dd-mGe" secondAttribute="top" constant="135" id="7By-OO-Los"/>
+                            <constraint firstItem="XDt-OK-TCe" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" constant="16" id="Dlc-T0-Yn4"/>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="bottom" secondItem="Jrq-ym-agh" secondAttribute="bottom" constant="29" id="JTj-bx-iKm"/>
+                            <constraint firstItem="Pbb-Hv-Kan" firstAttribute="top" secondItem="qAD-gm-7Co" secondAttribute="bottom" constant="20" id="JyB-H7-bDt"/>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="trailing" secondItem="qAD-gm-7Co" secondAttribute="trailing" constant="16" id="L73-uG-xpe"/>
+                            <constraint firstItem="dH9-4Z-6rE" firstAttribute="trailing" secondItem="eXj-dd-mGe" secondAttribute="trailing" id="Zoc-Hp-6wL"/>
+                            <constraint firstItem="dH9-4Z-6rE" firstAttribute="top" secondItem="eXj-dd-mGe" secondAttribute="top" id="ZpU-ba-HVR"/>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="trailing" secondItem="1uE-of-n8N" secondAttribute="trailing" constant="16" id="iHi-Nn-EFG"/>
+                            <constraint firstItem="1uE-of-n8N" firstAttribute="top" secondItem="Pbb-Hv-Kan" secondAttribute="bottom" constant="8" id="kU1-QO-AW6"/>
+                            <constraint firstItem="Pbb-Hv-Kan" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" constant="16" id="ke0-lu-qLc"/>
+                            <constraint firstItem="1uE-of-n8N" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" constant="16" id="kq2-Kw-4kP"/>
+                            <constraint firstItem="XDt-OK-TCe" firstAttribute="top" secondItem="eXj-dd-mGe" secondAttribute="top" constant="135" id="vS7-WI-w8h"/>
+                            <constraint firstItem="Jrq-ym-agh" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" constant="16" id="waY-9T-M4C"/>
+                            <constraint firstItem="qAD-gm-7Co" firstAttribute="top" secondItem="XDt-OK-TCe" secondAttribute="bottom" constant="8" id="xwQ-eY-Qzd"/>
+                            <constraint firstItem="qAD-gm-7Co" firstAttribute="leading" secondItem="eXj-dd-mGe" secondAttribute="leading" constant="16" id="yzV-eM-257"/>
+                            <constraint firstItem="eXj-dd-mGe" firstAttribute="trailing" secondItem="XDt-OK-TCe" secondAttribute="trailing" constant="16" id="zsa-tc-tYv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eXj-dd-mGe"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isDividerHidden" value="YES"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="motionIdentifier" value="Setup Game"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="endTextView" destination="1uE-of-n8N" id="coi-Oh-GIs"/>
+                        <outlet property="gameModeLabel" destination="dH9-4Z-6rE" id="RZa-Zp-36i"/>
+                        <outlet property="startGameButton" destination="Jrq-ym-agh" id="ia1-c7-wpn"/>
+                        <outlet property="startTextView" destination="qAD-gm-7Co" id="qwv-5e-Y00"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gGE-vg-TsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1661.5999999999999" y="233.43328335832086"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="DarkPurple1">
+            <color red="0.21199999749660492" green="0.18799999356269836" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple1">
+            <color red="0.5220000147819519" green="0.49799999594688416" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple2">
+            <color red="0.40400001410000003" green="0.3799999952" blue="0.69800001379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wxv-xh-syW"/>
+    </inferredMetricsTieBreakers>
+</document>

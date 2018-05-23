@@ -1,0 +1,9 @@
+{
+  "commitish" : "0.8.0",
+  "iOS" : [
+    {
+      "name" : "SwiftyButton",
+      "hash" : "d225ac9c916aa11337497fce1055a44dbc3042a95ac0c1c62e7bc45146420d0e"
+    }
+  ]
+}
