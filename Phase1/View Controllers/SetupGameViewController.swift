@@ -23,7 +23,10 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        
         setupLabel()
+        setupButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,12 +45,6 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         } else if (gameType == 1) {
             gameModeLabel.text = "Mode: Fewest Taps to Goal"
         }
-
-        setupButton()
-    }
-    
-    func setupInputs() {
-        
     }
     
     func setupButton() {

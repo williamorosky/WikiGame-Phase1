@@ -77,7 +77,7 @@ open class GameTextView: UITextView {
     private func commonInit() {
         contentMode = .redraw
         associateConstraints()
-//        NotificationCenter.default.addObserver(self, selector: #selector(didBeginChangeText), name: .UITextFieldTextDidBeginEditing, object: self)
+        NotificationCenter.default.addObserver(self, selector: #selector(didBeginChangeText), name: .UITextViewTextDidBeginEditing, object: self)
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange), name: .UITextViewTextDidChange, object: self)
         NotificationCenter.default.addObserver(self, selector: #selector(textDidEndEditing), name: .UITextViewTextDidEndEditing, object: self)
     }
@@ -91,8 +91,6 @@ open class GameTextView: UITextView {
     }
     
     private func associateConstraints() {
-        // iterate through all text view's constraints and identify
-        // height,from: https://github.com/legranddamien/MBAutoGrowingTextView
         for constraint in constraints {
             if (constraint.firstAttribute == .height) {
                 if (constraint.relation == .equal) {
@@ -115,6 +113,7 @@ open class GameTextView: UITextView {
     private var shouldScrollAfterHeightChanged = false
     override open func layoutSubviews() {
         super.layoutSubviews()
+        drawLine()
 
         if text == oldText && bounds.size == oldSize { return }
         oldText = text
@@ -147,7 +146,6 @@ open class GameTextView: UITextView {
             shouldScrollAfterHeightChanged = false
             scrollToCorrectPosition()
         }
-        
     }
     
     private func scrollToCorrectPosition() {
@@ -163,8 +161,7 @@ open class GameTextView: UITextView {
     // Show placeholder if needed
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-//        drawLine()
-        
+
         if text.isEmpty {
             let xValue = textContainerInset.left + textContainer.lineFragmentPadding
             let yValue = textContainerInset.top
@@ -193,7 +190,6 @@ open class GameTextView: UITextView {
     
     func drawLine() {
         underlineView.removeFromSuperview()
-        
         let underLine = UIView(frame:CGRect(x: 0, y: frame.size.height - underLineWidth, width: frame.size.width, height: underLineWidth))
         
         underLine.backgroundColor = underLineColor
@@ -204,14 +200,15 @@ open class GameTextView: UITextView {
     }
     
     func updateTextFont() {
+
         if (text.isEmpty || bounds.size.equalTo(.zero)) {
             return
         }
         
-        let textViewSize = frame.size;
-        let fixedWidth = textViewSize.width;
+        let textViewSize = frame.size
+        let fixedWidth = textViewSize.width
         let expectSize = sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT)))
-        
+
         var expectFont = font
         if (expectSize.height > textViewSize.height) {
             while (sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT))).height > textViewSize.height) {
@@ -226,6 +223,7 @@ open class GameTextView: UITextView {
             }
             font = expectFont
         }
+        
     }
     
     private func animateUnderline(withAlpha alpha: CGFloat) {
@@ -264,7 +262,7 @@ open class GameTextView: UITextView {
                 undoManager?.removeAllActions()
             }
             setNeedsDisplay()
-            
+
             if self.numberOfVisibleLines > self.maxLines {
                 self.updateTextFont()
             } else if self.numberOfVisibleLines < self.maxLines {
@@ -273,7 +271,6 @@ open class GameTextView: UITextView {
             } else {
                 font = UIFont(name: "Roboto-Medium", size: 40.0)
             }
-            
         }
     }
 }
