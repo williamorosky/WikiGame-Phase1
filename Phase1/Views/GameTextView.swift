@@ -262,15 +262,19 @@ open class GameTextView: UITextView {
                 undoManager?.removeAllActions()
             }
             setNeedsDisplay()
-
-            if self.numberOfVisibleLines > self.maxLines {
-                self.updateTextFont()
-            } else if self.numberOfVisibleLines < self.maxLines {
-                isScrollEnabled = true
-                font = UIFont(name: "Roboto-Medium", size: 40.0)
-            } else {
-                font = UIFont(name: "Roboto-Medium", size: 40.0)
-            }
+            needsNewFontSize()
+            
+        }
+    }
+    
+    func needsNewFontSize() {
+        if self.numberOfVisibleLines > self.maxLines {
+            self.updateTextFont()
+        } else if self.numberOfVisibleLines < self.maxLines {
+            isScrollEnabled = true
+            font = UIFont(name: "Roboto-Medium", size: 40.0)
+        } else {
+            font = UIFont(name: "Roboto-Medium", size: 40.0)
         }
     }
 }

@@ -16,7 +16,29 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     @IBOutlet weak var gameModeLabel: UILabel!
     @IBOutlet weak var startTextView: GameTextView!
     @IBOutlet weak var endTextView: GameTextView!
-
+    @IBOutlet weak var startSuggestion: UIButton!
+    @IBOutlet weak var endSuggestion: UIButton!
+    
+    
+    // MARK: - Actions
+    @IBAction func startFillSuggestion(_ sender: AnyObject) {
+        if let button = sender as? UIButton {
+            startTextView.text = button.titleLabel?.text
+            startTextView.setNeedsLayout()
+            startTextView.needsNewFontSize()
+            startTextView.resignFirstResponder()
+        }
+    }
+    
+    @IBAction func endFillSuggestion(_ sender: AnyObject) {
+        if let button = sender as? UIButton {
+            endTextView.text = button.titleLabel?.text
+            endTextView.setNeedsLayout()
+            endTextView.needsNewFontSize()
+            endTextView.resignFirstResponder()
+        }
+    }
+    
     //MARK: - Properties
     var gameType = 0
 
@@ -26,7 +48,7 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         self.hideKeyboardWhenTappedAround()
         
         setupLabel()
-        setupButton()
+        setupButtons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +69,11 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         }
     }
     
-    func setupButton() {
+    func setupButtons() {
+        
+        startSuggestion.contentHorizontalAlignment = .left
+        endSuggestion.contentHorizontalAlignment = .left
+
         let buttonColor = UIColor(named: "Purple1") ?? .purple
         let shadowColor = UIColor(named: "Purple2") ?? .purple
         startGameButton.colors = .init(button: buttonColor, shadow: shadowColor)
@@ -62,15 +88,21 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         }, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
+        if let destination = segue.destination as? GameViewController {
+            if (segue.identifier == "startGame") {
+                destination.navigationItem.setHidesBackButton(true, animated:false)
+            }
+        }
     }
-    */
+
 
 }
 
