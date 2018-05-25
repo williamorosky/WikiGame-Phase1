@@ -1,0 +1,9 @@
+{
+  "commitish" : "3.2.1",
+  "iOS" : [
+    {
+      "name" : "PMKAlamofire",
+      "hash" : "e4e931945eca5708b7ff843a7ce094b764a0df3dfffe27a4f5ff1474ada3e1ec"
+    }
+  ]
+}

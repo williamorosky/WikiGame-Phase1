@@ -1,3 +1,4 @@
-github "ViccAlexander/Chameleon"			~> 2.0.5
+github "Alamofire/Alamofire"				~> 4.7.2
+github "mxcl/PromiseKit"					~> 6.2.8
+github "tristanhimmelman/AlamofireObjectMapper" ~> 5.0.0
 github "CosmicMind/Material"				~> 2.15.0
-github "TakeScoop/SwiftyButton"				~> 0.8.0

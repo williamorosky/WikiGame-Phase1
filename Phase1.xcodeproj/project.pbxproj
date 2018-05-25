@@ -18,7 +18,6 @@
 		51C10B7620AC9F69009E2800 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51C10B6F20AC9F69009E2800 /* Assets.xcassets */; };
 		51C10B7720AC9F69009E2800 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C10B7020AC9F69009E2800 /* AppDelegate.swift */; };
 		51C10B7820AC9F69009E2800 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51C10B7120AC9F69009E2800 /* Info.plist */; };
-		51C10B7E20ACA414009E2800 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C10B7A20ACA414009E2800 /* Chameleon.framework */; };
 		51C10B7F20ACA414009E2800 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C10B7B20ACA414009E2800 /* Motion.framework */; };
 		51C10B8120ACA414009E2800 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51C10B7D20ACA414009E2800 /* Material.framework */; };
 		51CDD3D120ACAB60002B474D /* Topic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51CDD3C220ACAB60002B474D /* Topic-Bold.ttf */; };
@@ -42,6 +41,9 @@
 		51CDD3EB20ACB2D1002B474D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CDD3E620ACB2D1002B474D /* Info.plist */; };
 		51CDD3ED20ACBD6B002B474D /* GameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */; };
 		51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */; };
+		51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4F0AC20B75F0600356848 /* APIHandler.swift */; };
+		51D4F0B620B763DE00356848 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B120B763DD00356848 /* Alamofire.framework */; };
+		51D4F0BA20B7676E00356848 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B920B7676E00356848 /* PromiseKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,9 +80,7 @@
 		51C10B6F20AC9F69009E2800 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51C10B7020AC9F69009E2800 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51C10B7120AC9F69009E2800 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		51C10B7A20ACA414009E2800 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
 		51C10B7B20ACA414009E2800 /* Motion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Motion.framework; path = Carthage/Build/iOS/Motion.framework; sourceTree = "<group>"; };
-		51C10B7C20ACA414009E2800 /* SwiftyButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyButton.framework; path = Carthage/Build/iOS/SwiftyButton.framework; sourceTree = "<group>"; };
 		51C10B7D20ACA414009E2800 /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		51CDD3C220ACAB60002B474D /* Topic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Topic-Bold.ttf"; sourceTree = "<group>"; };
 		51CDD3C320ACAB60002B474D /* Topic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Topic.ttf; sourceTree = "<group>"; };
@@ -104,6 +104,9 @@
 		51CDD3E620ACB2D1002B474D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeViewController.swift; sourceTree = "<group>"; };
 		51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
+		51D4F0AC20B75F0600356848 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		51D4F0B120B763DD00356848 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		51D4F0B920B7676E00356848 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51C10B7E20ACA414009E2800 /* Chameleon.framework in Frameworks */,
+				51D4F0BA20B7676E00356848 /* PromiseKit.framework in Frameworks */,
+				51D4F0B620B763DE00356848 /* Alamofire.framework in Frameworks */,
 				51C10B7F20ACA414009E2800 /* Motion.framework in Frameworks */,
 				51C10B8120ACA414009E2800 /* Material.framework in Frameworks */,
 			);
@@ -228,6 +232,7 @@
 		51C10B7220AC9F69009E2800 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				51D4F0AC20B75F0600356848 /* APIHandler.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -235,10 +240,10 @@
 		51C10B7920ACA414009E2800 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				51C10B7A20ACA414009E2800 /* Chameleon.framework */,
+				51D4F0B920B7676E00356848 /* PromiseKit.framework */,
+				51D4F0B120B763DD00356848 /* Alamofire.framework */,
 				51C10B7D20ACA414009E2800 /* Material.framework */,
 				51C10B7B20ACA414009E2800 /* Motion.framework */,
-				51C10B7C20ACA414009E2800 /* SwiftyButton.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -452,9 +457,10 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Motion.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -473,6 +479,7 @@
 				51CDD3E920ACB2D1002B474D /* Utils.swift in Sources */,
 				510E6E7420B4B874007210A3 /* Extensions.swift in Sources */,
 				51CDD3E720ACB2D1002B474D /* PressableButton.swift in Sources */,
+				51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */,
 				51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */,
 				51C10B7720AC9F69009E2800 /* AppDelegate.swift in Sources */,
 				51CDD3E820ACB2D1002B474D /* FlatButton.swift in Sources */,

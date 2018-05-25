@@ -24,8 +24,14 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     @IBAction func startFillSuggestion(_ sender: AnyObject) {
         if let button = sender as? UIButton {
             startTextView.text = button.titleLabel?.text
-            startTextView.setNeedsLayout()
             startTextView.needsNewFontSize()
+            startTextView.setNeedsLayout()
+            startTextView.setNeedsDisplay()
+            startTextView.layoutIfNeeded()
+            startTextView.needsNewFontSize()
+            startTextView.setNeedsLayout()
+            startTextView.setNeedsDisplay()
+            startTextView.layoutIfNeeded()
             startTextView.resignFirstResponder()
         }
     }
@@ -33,8 +39,8 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     @IBAction func endFillSuggestion(_ sender: AnyObject) {
         if let button = sender as? UIButton {
             endTextView.text = button.titleLabel?.text
-            endTextView.setNeedsLayout()
             endTextView.needsNewFontSize()
+            endTextView.setNeedsLayout()
             endTextView.resignFirstResponder()
         }
     }
@@ -47,6 +53,11 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
+        startTextView.delegate = self
+        startTextView.tag = 0
+        endTextView.delegate = self
+        endTextView.tag = 1
+
         setupLabel()
         setupButtons()
     }
@@ -58,10 +69,10 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.delegate = self
+        
     }
     
     func setupLabel() {
-        
         if (gameType == 0) {
             gameModeLabel.text = "Mode: Fastest to Goal"
         } else if (gameType == 1) {
@@ -87,6 +98,45 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
             self.view.layoutIfNeeded()
         }, completion: nil)
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 2 {
+            APIHandler.getAutofillSuggestion(text: textView.text)
+                .done { suggestions -> Void in
+                    if textView.tag == 0 {
+                        if suggestions.count > 0 {
+                            self.setSuggestionText("start", suggestion: suggestions[0])
+                        } else {
+                            self.setSuggestionText("start", suggestion: "")
+                        }
+                    } else if textView.tag == 1 {
+                        if suggestions.count > 0 {
+                            self.setSuggestionText("end", suggestion: suggestions[0])
+                        } else {
+                            self.setSuggestionText("end", suggestion: "")
+                        }
+                    }
+                }
+                .catch { error in
+                    //Handle error or give feedback to the user
+                    print(error.localizedDescription)
+            }
+        } else {
+            if textView.tag == 0 {
+                self.setSuggestionText("start", suggestion: "")
+            } else if textView.tag == 1 {
+                self.setSuggestionText("end", suggestion: "")
+            }
+        }
+    }
+    
+    func setSuggestionText(_ endpoint:String, suggestion:String) {
+        if endpoint == "start" {
+            startSuggestion.setTitle(suggestion, for: .normal)
+        } else if endpoint == "end" {
+            endSuggestion.setTitle(suggestion, for: .normal)
+        }
+    }
 
     // MARK: - Navigation
 
@@ -98,6 +148,17 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         
         if let destination = segue.destination as? GameViewController {
             if (segue.identifier == "startGame") {
+                
+                APIHandler.getPath(startTextView.text, end: endTextView.text)
+                    .done { json -> Void in
+                        //Do something with the JSON info
+                        print(json)
+                    }
+                    .catch { error in
+                        //Handle error or give feedback to the user
+                        print(error.localizedDescription)
+                }
+                
                 destination.navigationItem.setHidesBackButton(true, animated:false)
             }
         }
