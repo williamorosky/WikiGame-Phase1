@@ -41,6 +41,10 @@
 		51CDD3EB20ACB2D1002B474D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CDD3E620ACB2D1002B474D /* Info.plist */; };
 		51CDD3ED20ACBD6B002B474D /* GameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */; };
 		51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */; };
+		51D1EDF020B9DBB6000C3295 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D1EDEF20B9DBB6000C3295 /* PauseView.swift */; };
+		51D1EDF220B9DF5D000C3295 /* SwiftEntryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D1EDF120B9DF5D000C3295 /* SwiftEntryKit.framework */; };
+		51D1EDF420B9E0BB000C3295 /* QuickLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D1EDF320B9E0BB000C3295 /* QuickLayout.framework */; };
+		51D1EDF620B9E27E000C3295 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D1EDF520B9E27E000C3295 /* PauseView.xib */; };
 		51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4F0AC20B75F0600356848 /* APIHandler.swift */; };
 		51D4F0B620B763DE00356848 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B120B763DD00356848 /* Alamofire.framework */; };
 		51D4F0BA20B7676E00356848 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B920B7676E00356848 /* PromiseKit.framework */; };
@@ -104,6 +108,10 @@
 		51CDD3E620ACB2D1002B474D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeViewController.swift; sourceTree = "<group>"; };
 		51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
+		51D1EDEF20B9DBB6000C3295 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		51D1EDF120B9DF5D000C3295 /* SwiftEntryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftEntryKit.framework; path = Carthage/Build/iOS/SwiftEntryKit.framework; sourceTree = "<group>"; };
+		51D1EDF320B9E0BB000C3295 /* QuickLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLayout.framework; path = Carthage/Build/iOS/QuickLayout.framework; sourceTree = "<group>"; };
+		51D1EDF520B9E27E000C3295 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 		51D4F0AC20B75F0600356848 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		51D4F0B120B763DD00356848 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		51D4F0B920B7676E00356848 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
@@ -114,6 +122,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D1EDF420B9E0BB000C3295 /* QuickLayout.framework in Frameworks */,
+				51D1EDF220B9DF5D000C3295 /* SwiftEntryKit.framework in Frameworks */,
 				51D4F0BA20B7676E00356848 /* PromiseKit.framework in Frameworks */,
 				51D4F0B620B763DE00356848 /* Alamofire.framework in Frameworks */,
 				51C10B7F20ACA414009E2800 /* Motion.framework in Frameworks */,
@@ -240,6 +250,8 @@
 		51C10B7920ACA414009E2800 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				51D1EDF320B9E0BB000C3295 /* QuickLayout.framework */,
+				51D1EDF120B9DF5D000C3295 /* SwiftEntryKit.framework */,
 				51D4F0B920B7676E00356848 /* PromiseKit.framework */,
 				51D4F0B120B763DD00356848 /* Alamofire.framework */,
 				51C10B7D20ACA414009E2800 /* Material.framework */,
@@ -288,6 +300,7 @@
 		51CDD3DF20ACB2D1002B474D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				51D1EDEE20B9DB8A000C3295 /* PauseView */,
 				51CDD3E020ACB2D1002B474D /* SwiftyButton */,
 				510E6E7520B4C7B7007210A3 /* GameTextView.swift */,
 			);
@@ -305,6 +318,15 @@
 				51CDD3E620ACB2D1002B474D /* Info.plist */,
 			);
 			path = SwiftyButton;
+			sourceTree = "<group>";
+		};
+		51D1EDEE20B9DB8A000C3295 /* PauseView */ = {
+			isa = PBXGroup;
+			children = (
+				51D1EDEF20B9DBB6000C3295 /* PauseView.swift */,
+				51D1EDF520B9E27E000C3295 /* PauseView.xib */,
+			);
+			path = PauseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,6 +437,7 @@
 				51CDD3D220ACAB60002B474D /* Topic.ttf in Resources */,
 				51C10B7820AC9F69009E2800 /* Info.plist in Resources */,
 				51CDD3DD20ACAB60002B474D /* Roboto-Thin.ttf in Resources */,
+				51D1EDF620B9E27E000C3295 /* PauseView.xib in Resources */,
 				51C10B7320AC9F69009E2800 /* LaunchScreen.storyboard in Resources */,
 				51CDD3D720ACAB60002B474D /* Roboto-ThinItalic.ttf in Resources */,
 				51CDD3DE20ACAB60002B474D /* Roboto-Black.ttf in Resources */,
@@ -461,6 +484,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftEntryKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/QuickLayout.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -478,6 +503,7 @@
 			files = (
 				51CDD3E920ACB2D1002B474D /* Utils.swift in Sources */,
 				510E6E7420B4B874007210A3 /* Extensions.swift in Sources */,
+				51D1EDF020B9DBB6000C3295 /* PauseView.swift in Sources */,
 				51CDD3E720ACB2D1002B474D /* PressableButton.swift in Sources */,
 				51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */,
 				51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */,

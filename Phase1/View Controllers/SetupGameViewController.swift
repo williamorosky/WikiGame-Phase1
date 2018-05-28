@@ -139,6 +139,17 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
     }
 
     // MARK: - Navigation
+    
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier, ident == "startGame" {
+//            guard endpointsAreValid() else {
+//                return false
+//            }
+            
+            return true
+        }
+        return false
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -148,22 +159,30 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
         
         if let destination = segue.destination as? GameViewController {
             if (segue.identifier == "startGame") {
-                
-                APIHandler.getPath(startTextView.text, end: endTextView.text)
-                    .done { json -> Void in
-                        //Do something with the JSON info
-                        print(json)
-                    }
-                    .catch { error in
-                        //Handle error or give feedback to the user
-                        print(error.localizedDescription)
-                }
+                destination.gameType = self.gameType
+//                APIHandler.getPath(startTextView.text, end: endTextView.text)
+//                    .done { json -> Void in
+//                        //Do something with the JSON info
+//                        print(json)
+//                    }
+//                    .catch { error in
+//                        //Handle error or give feedback to the user
+//                        print(error.localizedDescription)
+//                }
                 
                 destination.navigationItem.setHidesBackButton(true, animated:false)
             }
         }
     }
 
+    func endpointsAreValid() -> Bool {
+        if startTextView.text == startSuggestion.titleLabel?.text &&
+            endTextView.text == endSuggestion.titleLabel?.text {
+            //check if path exists
+            return true
+        }
+        return false
+    }
 
 }
 
