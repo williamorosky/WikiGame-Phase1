@@ -13,6 +13,11 @@ class HomeViewController: UIViewController {
     
     //MARK: Outlets
     @IBOutlet weak var newGameButton: PressableButton!
+    
+    // MARK: - Actions
+    @IBAction func unwindToHomeViewController(segue:UIStoryboardSegue) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +31,7 @@ class HomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        navigationController?.delegate = self
+        navigationController?.delegate = self
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }

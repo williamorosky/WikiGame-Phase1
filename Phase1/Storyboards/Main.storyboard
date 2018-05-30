@@ -34,7 +34,7 @@
         <!--Navigation Controller-->
         <scene sceneID="TQr-HU-7B5">
             <objects>
-                <navigationController id="JNq-pG-aVG" customClass="NavigationController" customModule="Phase1" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="JNq-pG-aVG" customClass="NavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="1Kr-2a-oNL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -579,7 +579,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="playAgain:" destination="pmw-dN-lDB" eventType="touchUpInside" id="Va1-KW-mjy"/>
+                                    <action selector="playAgain:" destination="pmw-dN-lDB" eventType="touchUpInside" id="UWW-bt-qVM"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKv-NG-hPY">
@@ -621,9 +621,11 @@
                     </view>
                     <connections>
                         <outlet property="playAgainButton" destination="8DX-ag-iif" id="3Ia-Uj-xH1"/>
+                        <segue destination="AxG-dq-4Zh" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="csk-Kg-o3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Era-Vw-d2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="AxG-dq-4Zh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3269.5999999999999" y="234.33283358320841"/>
         </scene>

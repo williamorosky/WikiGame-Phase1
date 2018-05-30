@@ -15,12 +15,7 @@ class GameOverViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func playAgain(_ sender: AnyObject) {
-        if let navigationController = self.navigationController {
-            
-            let viewControllers: [UIViewController] = navigationController.viewControllers
-            print(viewControllers.count)
-//            self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
-        }
+        performSegue(withIdentifier: "unwindToHomeViewController", sender: self)
     }
 
     //MARK: - Properties
