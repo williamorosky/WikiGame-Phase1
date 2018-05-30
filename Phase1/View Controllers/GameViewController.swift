@@ -20,10 +20,24 @@ class GameViewController: UIViewController {
     // MARK: - Actions
     @IBAction func pauseGame(_ sender: AnyObject) {
         if let _ = sender as? UIButton {
-            let pauseView = PauseView()
-//            pauseView.pauseButton.
-            var attributes = EKAttributes()
-            SwiftEntryKit.display(entry: pauseView, using: attributes)
+            var attributes = EKAttributes.centerFloat
+            attributes.hapticFeedbackType = .success
+            attributes.displayDuration = .infinity
+            attributes.screenBackground = .color(color: UIColor.black.withAlphaComponent(0.4))
+            attributes.entryBackground = .clear
+            attributes.entryInteraction = .absorbTouches
+            attributes.shadow = .active(with: .init(color: .black, opacity: 0.3, radius: 8, offset: .zero))
+            attributes.screenInteraction = .dismiss
+            attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+            attributes.roundCorners = .all(radius: 3)
+            attributes.entranceAnimation = .init(translate: .init(duration: 0.7, spring: .init(damping: 0.7, initialVelocity: 0)),
+                                                 scale: .init(from: 0.7, to: 1, duration: 0.4, spring: .init(damping: 1, initialVelocity: 0)))
+            attributes.exitAnimation = .init(translate: .init(duration: 0.2))
+            attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.35)))
+            attributes.positionConstraints.size = .init(width: .offset(value: 20), height: .intrinsic)
+            attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.minEdge), height: .intrinsic)
+            attributes.statusBar = .dark
+            showPauseView(attributes: attributes)
         }
     }
     
@@ -57,8 +71,32 @@ class GameViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+        if (segue.identifier == "GameOver") {
+            if let destination = segue.destination as? GameOverViewController {
+                destination.gameType = self.gameType
+                destination.navigationItem.setHidesBackButton(true, animated:false)
+            }
+        
+        }
     }
     
+    // Bumps a custom nib view
+    private func showPauseView(attributes: EKAttributes) {
+        let pauseView = PauseView()
+        pauseView.setupButtons()
+        pauseView.giveUpButton.addTarget(self, action: #selector(showGameOverViewController), for: .touchUpInside)
+        pauseView.cancelButton.addTarget(self, action: #selector(dismissPauseView), for: .touchUpInside)
+        SwiftEntryKit.display(entry: pauseView, using: attributes)
+    }
+    
+    @objc func dismissPauseView() {
+        SwiftEntryKit.dismiss()
+    }
+    
+    @objc func showGameOverViewController() {
+        SwiftEntryKit.dismiss()
+        self.performSegue(withIdentifier: "GameOver", sender: self)
+    }
 }
 
 extension GameViewController: UINavigationControllerDelegate {

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		510E6E7420B4B874007210A3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510E6E7320B4B874007210A3 /* Extensions.swift */; };
 		510E6E7620B4C7B7007210A3 /* GameTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510E6E7520B4C7B7007210A3 /* GameTextView.swift */; };
+		5116FA2F20BF0EB600933825 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116FA2E20BF0EB600933825 /* PauseView.swift */; };
+		5116FA3120BF0EC600933825 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5116FA3020BF0EC600933825 /* PauseView.xib */; };
+		5116FA3320BF1B2000933825 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5116FA3220BF1B2000933825 /* GameOverViewController.swift */; };
 		519A077B20B7105E003228C6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519A077A20B7105E003228C6 /* GameViewController.swift */; };
 		51C10B5020AC9E7B009E2800 /* Phase1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C10B4F20AC9E7B009E2800 /* Phase1Tests.swift */; };
 		51C10B5B20AC9E7C009E2800 /* Phase1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C10B5A20AC9E7C009E2800 /* Phase1UITests.swift */; };
@@ -41,10 +44,8 @@
 		51CDD3EB20ACB2D1002B474D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CDD3E620ACB2D1002B474D /* Info.plist */; };
 		51CDD3ED20ACBD6B002B474D /* GameModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */; };
 		51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */; };
-		51D1EDF020B9DBB6000C3295 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D1EDEF20B9DBB6000C3295 /* PauseView.swift */; };
 		51D1EDF220B9DF5D000C3295 /* SwiftEntryKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D1EDF120B9DF5D000C3295 /* SwiftEntryKit.framework */; };
 		51D1EDF420B9E0BB000C3295 /* QuickLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D1EDF320B9E0BB000C3295 /* QuickLayout.framework */; };
-		51D1EDF620B9E27E000C3295 /* PauseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51D1EDF520B9E27E000C3295 /* PauseView.xib */; };
 		51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D4F0AC20B75F0600356848 /* APIHandler.swift */; };
 		51D4F0B620B763DE00356848 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B120B763DD00356848 /* Alamofire.framework */; };
 		51D4F0BA20B7676E00356848 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51D4F0B920B7676E00356848 /* PromiseKit.framework */; };
@@ -70,6 +71,9 @@
 /* Begin PBXFileReference section */
 		510E6E7320B4B874007210A3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		510E6E7520B4C7B7007210A3 /* GameTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTextView.swift; sourceTree = "<group>"; };
+		5116FA2E20BF0EB600933825 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		5116FA3020BF0EC600933825 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
+		5116FA3220BF1B2000933825 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		519A077A20B7105E003228C6 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		51C10B3720AC9E79009E2800 /* Phase1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Phase1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51C10B4B20AC9E7B009E2800 /* Phase1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Phase1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,10 +112,8 @@
 		51CDD3E620ACB2D1002B474D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeViewController.swift; sourceTree = "<group>"; };
 		51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGameViewController.swift; sourceTree = "<group>"; };
-		51D1EDEF20B9DBB6000C3295 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
 		51D1EDF120B9DF5D000C3295 /* SwiftEntryKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftEntryKit.framework; path = Carthage/Build/iOS/SwiftEntryKit.framework; sourceTree = "<group>"; };
 		51D1EDF320B9E0BB000C3295 /* QuickLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLayout.framework; path = Carthage/Build/iOS/QuickLayout.framework; sourceTree = "<group>"; };
-		51D1EDF520B9E27E000C3295 /* PauseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseView.xib; sourceTree = "<group>"; };
 		51D4F0AC20B75F0600356848 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		51D4F0B120B763DD00356848 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		51D4F0B920B7676E00356848 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
@@ -148,6 +150,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5116FA2D20BF0E9D00933825 /* PauseView */ = {
+			isa = PBXGroup;
+			children = (
+				5116FA2E20BF0EB600933825 /* PauseView.swift */,
+				5116FA3020BF0EC600933825 /* PauseView.xib */,
+			);
+			path = PauseView;
+			sourceTree = "<group>";
+		};
 		51C10B2E20AC9E79009E2800 = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +236,7 @@
 				51CDD3EC20ACBD6A002B474D /* GameModeViewController.swift */,
 				51CDD3EE20AE3C51002B474D /* SetupGameViewController.swift */,
 				519A077A20B7105E003228C6 /* GameViewController.swift */,
+				5116FA3220BF1B2000933825 /* GameOverViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -300,7 +312,7 @@
 		51CDD3DF20ACB2D1002B474D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				51D1EDEE20B9DB8A000C3295 /* PauseView */,
+				5116FA2D20BF0E9D00933825 /* PauseView */,
 				51CDD3E020ACB2D1002B474D /* SwiftyButton */,
 				510E6E7520B4C7B7007210A3 /* GameTextView.swift */,
 			);
@@ -318,15 +330,6 @@
 				51CDD3E620ACB2D1002B474D /* Info.plist */,
 			);
 			path = SwiftyButton;
-			sourceTree = "<group>";
-		};
-		51D1EDEE20B9DB8A000C3295 /* PauseView */ = {
-			isa = PBXGroup;
-			children = (
-				51D1EDEF20B9DBB6000C3295 /* PauseView.swift */,
-				51D1EDF520B9E27E000C3295 /* PauseView.xib */,
-			);
-			path = PauseView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,7 +440,7 @@
 				51CDD3D220ACAB60002B474D /* Topic.ttf in Resources */,
 				51C10B7820AC9F69009E2800 /* Info.plist in Resources */,
 				51CDD3DD20ACAB60002B474D /* Roboto-Thin.ttf in Resources */,
-				51D1EDF620B9E27E000C3295 /* PauseView.xib in Resources */,
+				5116FA3120BF0EC600933825 /* PauseView.xib in Resources */,
 				51C10B7320AC9F69009E2800 /* LaunchScreen.storyboard in Resources */,
 				51CDD3D720ACAB60002B474D /* Roboto-ThinItalic.ttf in Resources */,
 				51CDD3DE20ACAB60002B474D /* Roboto-Black.ttf in Resources */,
@@ -503,8 +506,9 @@
 			files = (
 				51CDD3E920ACB2D1002B474D /* Utils.swift in Sources */,
 				510E6E7420B4B874007210A3 /* Extensions.swift in Sources */,
-				51D1EDF020B9DBB6000C3295 /* PauseView.swift in Sources */,
+				5116FA2F20BF0EB600933825 /* PauseView.swift in Sources */,
 				51CDD3E720ACB2D1002B474D /* PressableButton.swift in Sources */,
+				5116FA3320BF1B2000933825 /* GameOverViewController.swift in Sources */,
 				51D4F0AD20B75F0600356848 /* APIHandler.swift in Sources */,
 				51CDD3EF20AE3C51002B474D /* SetupGameViewController.swift in Sources */,
 				51C10B7720AC9F69009E2800 /* AppDelegate.swift in Sources */,

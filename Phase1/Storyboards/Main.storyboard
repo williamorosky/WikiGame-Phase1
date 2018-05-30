@@ -519,11 +519,113 @@
                         <outlet property="gameModeValueLabel" destination="43H-NF-ubx" id="I2m-uB-O2R"/>
                         <outlet property="pauseButton" destination="kc3-6P-twY" id="B1b-DV-i4m"/>
                         <outlet property="topBar" destination="K2g-e3-T5D" id="bUN-2T-DFE"/>
+                        <segue destination="pmw-dN-lDB" kind="presentation" identifier="GameOver" id="p0L-9h-0HY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHW-HX-gcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2432.8000000000002" y="232.53373313343329"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="8df-dA-ekL">
+            <objects>
+                <viewController storyboardIdentifier="GameOverViewController" id="pmw-dN-lDB" customClass="GameOverViewController" customModule="Phase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mvo-Ph-cmz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-vD-u9w">
+                                <rect key="frame" x="98" y="37" width="178" height="83.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="99s-9p-15N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="75"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-7h-FIX">
+                                <rect key="frame" x="16" y="128.5" width="343" height="165"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="SsT-X0-VRi"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DX-ag-iif" customClass="PressableButton" customModule="Phase1">
+                                <rect key="frame" x="16" y="545.5" width="343" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="CNl-c6-oOd"/>
+                                    <constraint firstAttribute="height" constant="53" id="HpG-Hf-hFe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                <state key="normal" title="Play Again!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" name="Purple1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" name="Purple2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="playAgain:" destination="pmw-dN-lDB" eventType="touchUpInside" id="Va1-KW-mjy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKv-NG-hPY">
+                                <rect key="frame" x="101" y="309.5" width="172" height="30.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Za8-qC-RNs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHq-lj-a1l">
+                                <rect key="frame" x="101" y="351.5" width="172" height="76"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="65"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="DarkPurple1"/>
+                        <constraints>
+                            <constraint firstItem="TBz-vD-u9w" firstAttribute="top" secondItem="9da-um-D5y" secondAttribute="top" constant="17" id="4PB-VR-tFQ"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="MHq-lj-a1l" secondAttribute="trailing" constant="102" id="4WF-HR-L5e"/>
+                            <constraint firstItem="MHq-lj-a1l" firstAttribute="width" secondItem="dKv-NG-hPY" secondAttribute="width" id="8kZ-cC-PUh"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="TBz-vD-u9w" secondAttribute="trailing" constant="99" id="HOF-3E-8Fb"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="dKv-NG-hPY" secondAttribute="trailing" constant="102" id="HbE-Mn-3IT"/>
+                            <constraint firstItem="TBz-vD-u9w" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="98" id="I1m-CJ-4RV"/>
+                            <constraint firstItem="x4N-7h-FIX" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="16" id="J2H-CU-tcY"/>
+                            <constraint firstItem="8DX-ag-iif" firstAttribute="top" secondItem="MHq-lj-a1l" secondAttribute="bottom" constant="118" id="OHR-TM-cHk"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="8DX-ag-iif" secondAttribute="trailing" constant="16" id="ZyK-mE-uB7"/>
+                            <constraint firstItem="MHq-lj-a1l" firstAttribute="top" secondItem="dKv-NG-hPY" secondAttribute="bottom" constant="11.5" id="aI9-qL-9bX"/>
+                            <constraint firstItem="x4N-7h-FIX" firstAttribute="top" secondItem="TBz-vD-u9w" secondAttribute="bottom" constant="8" id="dvf-Qk-qs5"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="x4N-7h-FIX" secondAttribute="trailing" constant="16" id="jBV-ax-6Yn"/>
+                            <constraint firstItem="dKv-NG-hPY" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="101" id="jeB-lg-OEt"/>
+                            <constraint firstItem="dKv-NG-hPY" firstAttribute="top" secondItem="x4N-7h-FIX" secondAttribute="bottom" constant="16" id="rp5-SI-oof"/>
+                            <constraint firstItem="8DX-ag-iif" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="16" id="vvU-OF-qUb"/>
+                            <constraint firstItem="MHq-lj-a1l" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="101" id="ybK-Ck-bkv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9da-um-D5y"/>
+                    </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="8DX-ag-iif" id="3Ia-Uj-xH1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Era-Vw-d2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3269.5999999999999" y="234.33283358320841"/>
         </scene>
     </scenes>
     <resources>
@@ -536,8 +638,17 @@
         <namedColor name="DarkPurple1">
             <color red="0.21199999749660492" green="0.18799999356269836" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="DarkPurple1">
+            <color red="0.21199999749660492" green="0.18799999356269836" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Purple1">
             <color red="0.5220000147819519" green="0.49799999594688416" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple1">
+            <color red="0.52200001480000002" green="0.49799999589999999" blue="0.94099998470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Purple2">
+            <color red="0.40400001410000003" green="0.3799999952" blue="0.69800001379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Purple2">
             <color red="0.40400001410000003" green="0.3799999952" blue="0.69800001379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

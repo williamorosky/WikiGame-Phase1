@@ -2,7 +2,7 @@
 //  PauseView.swift
 //  Phase1
 //
-//  Created by William O'Rosky on 5/26/18.
+//  Created by William O'Rosky on 5/30/18.
 //  Copyright © 2018 William O'Rosky. All rights reserved.
 //
 
@@ -11,37 +11,31 @@ import UIKit
 class PauseView: UIView {
     
     //MARK: Outlets
-    @IBOutlet weak var pauseButton: PressableButton!
+    @IBOutlet weak var giveUpButton: PressableButton!
+    @IBOutlet weak var cancelButton: PressableButton!
 
-    
-    
-    // Initialize
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        commonInit()
+        fromNib()
     }
     
-    private func commonInit() {
-        //contentMode = .redraw
-        let pauseButtonColor = UIColor(named: "Red1") ?? .blue
-        let pauseButtonShadowColor = UIColor(named: "Red2") ?? .blue
-        pauseButton.colors = .init(button: .blue, shadow: .blue)
-        pauseButton.shadowHeight = 5
-        pauseButton.cornerRadius = 4
-        pauseButton.offset = 0.8
+    init() {
+        super.init(frame: .zero)
+        fromNib()
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func setupButtons() {
+        let buttonColor = UIColor(named: "Purple1") ?? .purple
+        let shadowColor = UIColor(named: "Purple2") ?? .purple
+        giveUpButton.colors = .init(button: buttonColor, shadow: shadowColor)
+        giveUpButton.shadowHeight = 5
+        giveUpButton.cornerRadius = 4
+        giveUpButton.offset = 0.8
+        
+        cancelButton.colors = .init(button: buttonColor, shadow: shadowColor)
+        cancelButton.shadowHeight = 5
+        cancelButton.cornerRadius = 4
+        cancelButton.offset = 0.8
     }
-    */
 
 }

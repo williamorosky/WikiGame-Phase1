@@ -76,3 +76,38 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension UIView {
+    
+    @discardableResult
+    func fromNib<T : UIView>() -> T? {
+        guard let contentView = Bundle(for: type(of: self)).loadNibNamed(type(of: self).className, owner: self, options: nil)?.first as? T else {
+            return nil
+        }
+        addSubview(contentView)
+        contentView.fillSuperview()
+        return contentView
+    }
+}
+
+extension NSObject {
+    var className: String {
+        return String(describing: type(of: self))
+    }
+    
+    class var className: String {
+        return String(describing: self)
+    }
+}
+
+extension UIScreen {
+    var minEdge: CGFloat {
+        return UIScreen.main.bounds.minEdge
+    }
+}
+
+extension CGRect {
+    var minEdge: CGFloat {
+        return min(width, height)
+    }
+}
