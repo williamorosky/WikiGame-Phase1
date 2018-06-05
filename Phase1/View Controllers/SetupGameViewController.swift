@@ -33,6 +33,17 @@ class SetupGameViewController: UIViewController, GameTextViewDelegate {
             startTextView.setNeedsDisplay()
             startTextView.layoutIfNeeded()
             startTextView.resignFirstResponder()
+            
+            endTextView.text = button.titleLabel?.text
+            endTextView.needsNewFontSize()
+            endTextView.setNeedsLayout()
+            endTextView.setNeedsDisplay()
+            endTextView.layoutIfNeeded()
+            endTextView.needsNewFontSize()
+            endTextView.setNeedsLayout()
+            endTextView.setNeedsDisplay()
+            endTextView.layoutIfNeeded()
+            endTextView.resignFirstResponder()
         }
     }
     

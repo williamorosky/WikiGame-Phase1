@@ -23,6 +23,7 @@ open class PressableButton: UIButton {
         public static var shadowHeight: CGFloat = 3
         public static var offset: Double = 0.7
         public static var cornerRadius: CGFloat = 3
+        public static var bottomOnly: Bool = false
     }
     
     public struct ColorSet {
@@ -67,6 +68,13 @@ open class PressableButton: UIButton {
     
     @IBInspectable
     public var cornerRadius: CGFloat = Defaults.cornerRadius {
+        didSet {
+            updateBackgroundImages()
+        }
+    }
+    
+    @IBInspectable
+    public var bottomOnly: Bool = Defaults.bottomOnly {
         didSet {
             updateBackgroundImages()
         }
@@ -126,9 +134,9 @@ open class PressableButton: UIButton {
     
     fileprivate func updateBackgroundImages() {
         
-        let normalImage = Utils.buttonImage(color: colors.button, shadowHeight: shadowHeight, shadowColor: colors.shadow, cornerRadius: cornerRadius)
-        let highlightedImage = Utils.highlightedButtonImage(color: colors.button, shadowHeight: shadowHeight, shadowColor: colors.shadow, cornerRadius: cornerRadius, buttonPressOffset: offset)
-        let disabledImage = Utils.buttonImage(color: disabledColors.button, shadowHeight: shadowHeight, shadowColor: disabledColors.shadow, cornerRadius: cornerRadius)
+        let normalImage = Utils.buttonImage(color: colors.button, shadowHeight: shadowHeight, shadowColor: colors.shadow, cornerRadius: cornerRadius,  bottomOnly: bottomOnly)
+        let highlightedImage = Utils.highlightedButtonImage(color: colors.button, shadowHeight: shadowHeight, shadowColor: colors.shadow, cornerRadius: cornerRadius, buttonPressOffset: offset, bottomOnly: bottomOnly)
+        let disabledImage = Utils.buttonImage(color: disabledColors.button, shadowHeight: shadowHeight, shadowColor: disabledColors.shadow, cornerRadius: cornerRadius, bottomOnly: bottomOnly)
         
         setBackgroundImage(normalImage, for: .normal)
         setBackgroundImage(highlightedImage, for: .highlighted)

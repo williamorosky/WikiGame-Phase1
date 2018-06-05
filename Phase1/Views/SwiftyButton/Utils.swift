@@ -14,9 +14,10 @@ enum Utils {
         color: UIColor,
         shadowHeight: CGFloat,
         shadowColor: UIColor,
-        cornerRadius: CGFloat) -> UIImage {
+        cornerRadius: CGFloat,
+        bottomOnly: Bool) -> UIImage {
         
-        return buttonImage(color: color, shadowHeight: shadowHeight, shadowColor: shadowColor, cornerRadius: cornerRadius, frontImageOffset: 0)
+        return buttonImage(color: color, shadowHeight: shadowHeight, shadowColor: shadowColor, cornerRadius: cornerRadius, frontImageOffset: 0,  bottomOnly: bottomOnly)
     }
     
     static func highlightedButtonImage(
@@ -24,9 +25,10 @@ enum Utils {
         shadowHeight: CGFloat,
         shadowColor: UIColor,
         cornerRadius: CGFloat,
-        buttonPressOffset: Double) -> UIImage {
+        buttonPressOffset: Double,
+        bottomOnly: Bool) -> UIImage {
         
-        return buttonImage(color: color, shadowHeight: shadowHeight, shadowColor: shadowColor, cornerRadius: cornerRadius, frontImageOffset: shadowHeight * CGFloat(buttonPressOffset))
+        return buttonImage(color: color, shadowHeight: shadowHeight, shadowColor: shadowColor, cornerRadius: cornerRadius, frontImageOffset: shadowHeight * CGFloat(buttonPressOffset), bottomOnly: bottomOnly)
     }
     
     static func buttonImage(
@@ -34,17 +36,18 @@ enum Utils {
         shadowHeight: CGFloat,
         shadowColor: UIColor,
         cornerRadius: CGFloat,
-        frontImageOffset: CGFloat) -> UIImage {
+        frontImageOffset: CGFloat,
+        bottomOnly: Bool) -> UIImage {
         
         // Create foreground and background images
         let width = max(1, cornerRadius * 2 + shadowHeight)
         let height = max(1, cornerRadius * 2 + shadowHeight)
         let size = CGSize(width: width, height: height)
             
-        let frontImage = image(color: color, size: size, cornerRadius: cornerRadius)
+        let frontImage = image(color: color, size: size, cornerRadius: cornerRadius, bottomOnly: bottomOnly)
         var backImage: UIImage? = nil
         if shadowHeight != 0 {
-            backImage = image(color: shadowColor, size: size, cornerRadius: cornerRadius)
+            backImage = image(color: shadowColor, size: size, cornerRadius: cornerRadius, bottomOnly: bottomOnly)
         }
         
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height + shadowHeight)
@@ -63,7 +66,7 @@ enum Utils {
         return resizableImage ?? UIImage()
     }
     
-    static func image(color: UIColor, size: CGSize, cornerRadius: CGFloat) -> UIImage {
+    static func image(color: UIColor, size: CGSize, cornerRadius: CGFloat, bottomOnly:Bool) -> UIImage {
         
         let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
         
@@ -76,12 +79,23 @@ enum Utils {
         UIGraphicsEndImageContext()
         
         // Clip it with a bezier path
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        UIBezierPath(
-            roundedRect: rect,
-            cornerRadius: cornerRadius
-        ).addClip()
-        nonRoundedImage?.draw(in: rect)
+        if bottomOnly {
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            UIBezierPath(
+                roundedRect: rect,
+                byRoundingCorners: UIRectCorner.bottomLeft.union(.bottomRight),
+                cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)
+                ).addClip()
+            nonRoundedImage?.draw(in: rect)
+        } else {
+            UIGraphicsBeginImageContextWithOptions(size, false, 0)
+            UIBezierPath(
+                roundedRect: rect,
+                cornerRadius: cornerRadius
+                ).addClip()
+            nonRoundedImage?.draw(in: rect)
+        }
+        
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

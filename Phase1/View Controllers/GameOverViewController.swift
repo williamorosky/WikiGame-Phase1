@@ -11,6 +11,10 @@ import UIKit
 class GameOverViewController: UIViewController {
     
     //MARK: - Outlets
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var gameModeValueLabel: UILabel!
+    @IBOutlet weak var pathView: PathView!
     @IBOutlet weak var playAgainButton: PressableButton!
     
     // MARK: - Actions
@@ -23,13 +27,24 @@ class GameOverViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        containerView.layer.cornerRadius = 4
+        
+        pathView.titles = ["The Election of 1800", "Thomas Jefferson", "Really Long Title to Test Word Wrap", "Eiffel Tower", "Tower", "Burj Khalifa", "Syria", "ISIS"]
 
         let buttonColor = UIColor(named: "Purple1") ?? .purple
         let shadowColor = UIColor(named: "Purple2") ?? .purple
         playAgainButton.colors = .init(button: buttonColor, shadow: shadowColor)
         playAgainButton.shadowHeight = 5
         playAgainButton.cornerRadius = 4
+        playAgainButton.bottomOnly = true
         playAgainButton.offset = 0.8
+        
+        if gameType == 0 {
+            gameModeValueLabel.text = "Time Elapsed - 00:00"
+        } else if gameType == 1 {
+            gameModeValueLabel.text = "Total Taps - 6"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

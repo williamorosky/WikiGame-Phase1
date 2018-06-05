@@ -94,7 +94,7 @@ open class GameTextView: UITextView {
         for constraint in constraints {
             if (constraint.firstAttribute == .height) {
                 if (constraint.relation == .equal) {
-                    heightConstraint = constraint;
+                    heightConstraint = constraint
                 }
             }
         }

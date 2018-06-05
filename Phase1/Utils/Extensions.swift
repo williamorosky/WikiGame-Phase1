@@ -88,6 +88,12 @@ extension UIView {
         contentView.fillSuperview()
         return contentView
     }
+    
+    func removeAllSubviews() {
+        for v in self.subviews {
+            v.removeFromSuperview()
+        }
+    }
 }
 
 extension NSObject {

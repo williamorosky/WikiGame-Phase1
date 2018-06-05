@@ -77,10 +77,10 @@ public class FlatButton: UIButton {
     
     fileprivate func updateBackgroundImages() {
         
-        let normalImage = Utils.buttonImage(color: color, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius)
-        let highlightedImage = Utils.highlightedButtonImage(color: highlightedColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius, buttonPressOffset: 0)
-        let selectedImage = Utils.buttonImage(color: selectedColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius)
-        let disabledImage = Utils.buttonImage(color: disabledColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius)
+        let normalImage = Utils.buttonImage(color: color, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius,  bottomOnly: false)
+        let highlightedImage = Utils.highlightedButtonImage(color: highlightedColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius, buttonPressOffset: 0, bottomOnly: false)
+        let selectedImage = Utils.buttonImage(color: selectedColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius, bottomOnly: false)
+        let disabledImage = Utils.buttonImage(color: disabledColor, shadowHeight: 0, shadowColor: .clear, cornerRadius: cornerRadius, bottomOnly: false)
         
         setBackgroundImage(normalImage, for: .normal)
         setBackgroundImage(highlightedImage, for: .highlighted)

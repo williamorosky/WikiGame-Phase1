@@ -127,78 +127,90 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-SA-6fI" customClass="PressableButton" customModule="Phase1">
-                                <rect key="frame" x="16" y="241" width="343" height="53"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trr-3K-RTI">
+                                <rect key="frame" x="16" y="197" width="343" height="121"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNa-SA-6fI" customClass="PressableButton" customModule="Phase1">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="Vyt-vb-wgb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                        <state key="normal" title="Fastest to Goal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" name="Purple1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" name="Purple2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="nxh-FU-7Lq" kind="show" identifier="timeBasedGame" id="8jq-QJ-FOi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfO-7y-6Dc" customClass="PressableButton" customModule="Phase1">
+                                        <rect key="frame" x="0.0" y="68" width="343" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="NEY-2k-6xt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                        <state key="normal" title="Fewest Taps to Goal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" name="Purple1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" name="Purple2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="nxh-FU-7Lq" kind="show" identifier="tapBasedGame" id="wxv-xh-syW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="Vyt-vb-wgb"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZfO-7y-6Dc" secondAttribute="trailing" id="Coi-8g-H7g"/>
+                                    <constraint firstItem="mNa-SA-6fI" firstAttribute="top" secondItem="trr-3K-RTI" secondAttribute="top" id="XmV-dF-mWP"/>
+                                    <constraint firstAttribute="trailing" secondItem="mNa-SA-6fI" secondAttribute="trailing" id="cJj-8k-3gE"/>
+                                    <constraint firstAttribute="height" constant="121" id="lXk-Dp-fZD"/>
+                                    <constraint firstItem="mNa-SA-6fI" firstAttribute="leading" secondItem="trr-3K-RTI" secondAttribute="leading" id="pFp-z3-WRt"/>
+                                    <constraint firstItem="ZfO-7y-6Dc" firstAttribute="leading" secondItem="trr-3K-RTI" secondAttribute="leading" id="snG-JP-3bm"/>
+                                    <constraint firstItem="ZfO-7y-6Dc" firstAttribute="top" secondItem="mNa-SA-6fI" secondAttribute="bottom" constant="15" id="tmB-zO-QZm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
-                                <state key="normal" title="Fastest to Goal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" name="Purple1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" name="Purple2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="nxh-FU-7Lq" kind="show" identifier="timeBasedGame" id="8jq-QJ-FOi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfO-7y-6Dc" customClass="PressableButton" customModule="Phase1">
-                                <rect key="frame" x="16" y="309" width="343" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="NEY-2k-6xt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
-                                <state key="normal" title="Fewest Taps to Goal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" name="Purple1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" name="Purple2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="nxh-FU-7Lq" kind="show" identifier="tapBasedGame" id="wxv-xh-syW"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="DarkPurple1"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mNa-SA-6fI" firstAttribute="top" secondItem="U8A-Vx-50b" secondAttribute="top" constant="241" id="FgU-ti-yXX"/>
-                            <constraint firstItem="U8A-Vx-50b" firstAttribute="trailing" secondItem="ZfO-7y-6Dc" secondAttribute="trailing" constant="16" id="Oaq-qM-F4a"/>
-                            <constraint firstItem="mNa-SA-6fI" firstAttribute="leading" secondItem="U8A-Vx-50b" secondAttribute="leading" constant="16" id="OsK-IZ-O9W"/>
-                            <constraint firstItem="ZfO-7y-6Dc" firstAttribute="leading" secondItem="U8A-Vx-50b" secondAttribute="leading" constant="16" id="ZXY-gw-BcG"/>
-                            <constraint firstItem="U8A-Vx-50b" firstAttribute="trailing" secondItem="mNa-SA-6fI" secondAttribute="trailing" constant="16" id="bX4-bv-XO5"/>
-                            <constraint firstItem="ZfO-7y-6Dc" firstAttribute="top" secondItem="mNa-SA-6fI" secondAttribute="bottom" constant="15" id="jZS-vQ-KPN"/>
+                            <constraint firstItem="trr-3K-RTI" firstAttribute="centerY" secondItem="nnD-0l-4XS" secondAttribute="centerY" constant="-44" id="H1G-No-B5g"/>
+                            <constraint firstItem="U8A-Vx-50b" firstAttribute="trailing" secondItem="trr-3K-RTI" secondAttribute="trailing" constant="16" id="VT5-ic-5h6"/>
+                            <constraint firstItem="trr-3K-RTI" firstAttribute="leading" secondItem="U8A-Vx-50b" secondAttribute="leading" constant="16" id="nuE-hK-vev"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U8A-Vx-50b"/>
                         <userDefinedRuntimeAttributes>
@@ -215,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIt-1O-QiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="234"/>
+            <point key="canvasLocation" x="784.79999999999995" y="233.43328335832086"/>
         </scene>
         <!--Setup Game-->
         <scene sceneID="F1m-NH-naa">
@@ -534,93 +546,132 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-vD-u9w">
-                                <rect key="frame" x="98" y="37" width="178" height="83.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="178" id="99s-9p-15N"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="75"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4N-7h-FIX">
-                                <rect key="frame" x="16" y="128.5" width="343" height="165"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Td0-85-UwU">
+                                <rect key="frame" x="25" y="36" width="323" height="606"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finished!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBz-vD-u9w">
+                                        <rect key="frame" x="28" y="21" width="267" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="267" id="nah-6c-9Jb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="75"/>
+                                        <color key="textColor" name="DarkPurple1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DX-ag-iif" customClass="PressableButton" customModule="Phase1">
+                                        <rect key="frame" x="0.0" y="553" width="323" height="53"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="323" id="0t4-rJ-oA0"/>
+                                            <constraint firstAttribute="height" constant="53" id="HpG-Hf-hFe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
+                                        <state key="normal" title="Play Again!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" name="Purple1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" name="Purple2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playAgain:" destination="pmw-dN-lDB" eventType="touchUpInside" id="UWW-bt-qVM"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed 00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-Kt-1to">
+                                        <rect key="frame" x="28" y="99" width="267" height="24"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="20"/>
+                                        <color key="textColor" name="DarkPurple1"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDZ-ce-AiD">
+                                        <rect key="frame" x="28" y="148" width="267" height="378"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQK-aA-rAM" customClass="PathView" customModule="Phase1">
+                                                <rect key="frame" x="0.0" y="0.0" width="267" height="366"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="366" id="M38-mp-HXj"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="startStepColor">
+                                                        <color key="value" red="0.2189697921" green="0.82581216099999999" blue="0.66439467669999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="endStepColor">
+                                                        <color key="value" red="0.36470588240000001" green="0.56470588239999997" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="moreStepColor">
+                                                        <color key="value" name="Purple1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="stepSpacing">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="stepXPadding">
+                                                        <real key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="stepYPadding">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="UQK-aA-rAM" firstAttribute="leading" secondItem="xDZ-ce-AiD" secondAttribute="leading" id="XnP-PK-qDQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="UQK-aA-rAM" secondAttribute="bottom" id="Zp1-y3-imX"/>
+                                            <constraint firstItem="UQK-aA-rAM" firstAttribute="top" secondItem="xDZ-ce-AiD" secondAttribute="top" id="aqL-K5-qPR"/>
+                                            <constraint firstAttribute="trailing" secondItem="UQK-aA-rAM" secondAttribute="trailing" id="uyc-Ip-Zou"/>
+                                            <constraint firstItem="UQK-aA-rAM" firstAttribute="centerX" secondItem="xDZ-ce-AiD" secondAttribute="centerX" id="vPL-10-OZJ"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="165" id="SsT-X0-VRi"/>
+                                    <constraint firstItem="8DX-ag-iif" firstAttribute="leading" secondItem="Td0-85-UwU" secondAttribute="leading" id="1u9-nL-m1I"/>
+                                    <constraint firstAttribute="trailing" secondItem="fCs-Kt-1to" secondAttribute="trailing" constant="28" id="3bn-wm-tbZ"/>
+                                    <constraint firstItem="fCs-Kt-1to" firstAttribute="top" secondItem="Td0-85-UwU" secondAttribute="top" constant="99" id="Fc8-yZ-gUl"/>
+                                    <constraint firstAttribute="trailing" secondItem="TBz-vD-u9w" secondAttribute="trailing" constant="28" id="Ga4-Oh-Ks2"/>
+                                    <constraint firstItem="8DX-ag-iif" firstAttribute="top" secondItem="xDZ-ce-AiD" secondAttribute="bottom" constant="27" id="SzJ-f2-6bu"/>
+                                    <constraint firstItem="xDZ-ce-AiD" firstAttribute="top" secondItem="fCs-Kt-1to" secondAttribute="bottom" constant="25.5" id="T2F-Vk-sZa"/>
+                                    <constraint firstItem="xDZ-ce-AiD" firstAttribute="leading" secondItem="Td0-85-UwU" secondAttribute="leading" constant="28" id="WxN-fc-24C"/>
+                                    <constraint firstItem="TBz-vD-u9w" firstAttribute="top" secondItem="Td0-85-UwU" secondAttribute="top" constant="21" id="Zdh-Oq-v1R"/>
+                                    <constraint firstAttribute="bottom" secondItem="8DX-ag-iif" secondAttribute="bottom" id="agz-ab-IXh"/>
+                                    <constraint firstItem="TBz-vD-u9w" firstAttribute="leading" secondItem="Td0-85-UwU" secondAttribute="leading" constant="28" id="f5T-iD-fPg"/>
+                                    <constraint firstAttribute="trailing" secondItem="xDZ-ce-AiD" secondAttribute="trailing" constant="28" id="gTM-kn-PMV"/>
+                                    <constraint firstAttribute="trailing" secondItem="8DX-ag-iif" secondAttribute="trailing" id="ibp-jx-Aic"/>
+                                    <constraint firstItem="fCs-Kt-1to" firstAttribute="leading" secondItem="Td0-85-UwU" secondAttribute="leading" constant="28" id="ld8-E6-QcM"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DX-ag-iif" customClass="PressableButton" customModule="Phase1">
-                                <rect key="frame" x="16" y="545.5" width="343" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="CNl-c6-oOd"/>
-                                    <constraint firstAttribute="height" constant="53" id="HpG-Hf-hFe"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Topic-Bold" family="Topic" pointSize="27"/>
-                                <state key="normal" title="Play Again!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
-                                        <color key="value" name="Purple1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" name="Purple2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="playAgain:" destination="pmw-dN-lDB" eventType="touchUpInside" id="UWW-bt-qVM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Elapsed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKv-NG-hPY">
-                                <rect key="frame" x="101" y="309.5" width="172" height="30.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="172" id="Za8-qC-RNs"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="26"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHq-lj-a1l">
-                                <rect key="frame" x="101" y="351.5" width="172" height="76"/>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="65"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" name="DarkPurple1"/>
                         <constraints>
-                            <constraint firstItem="TBz-vD-u9w" firstAttribute="top" secondItem="9da-um-D5y" secondAttribute="top" constant="17" id="4PB-VR-tFQ"/>
-                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="MHq-lj-a1l" secondAttribute="trailing" constant="102" id="4WF-HR-L5e"/>
-                            <constraint firstItem="MHq-lj-a1l" firstAttribute="width" secondItem="dKv-NG-hPY" secondAttribute="width" id="8kZ-cC-PUh"/>
-                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="TBz-vD-u9w" secondAttribute="trailing" constant="99" id="HOF-3E-8Fb"/>
-                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="dKv-NG-hPY" secondAttribute="trailing" constant="102" id="HbE-Mn-3IT"/>
-                            <constraint firstItem="TBz-vD-u9w" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="98" id="I1m-CJ-4RV"/>
-                            <constraint firstItem="x4N-7h-FIX" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="16" id="J2H-CU-tcY"/>
-                            <constraint firstItem="8DX-ag-iif" firstAttribute="top" secondItem="MHq-lj-a1l" secondAttribute="bottom" constant="118" id="OHR-TM-cHk"/>
-                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="8DX-ag-iif" secondAttribute="trailing" constant="16" id="ZyK-mE-uB7"/>
-                            <constraint firstItem="MHq-lj-a1l" firstAttribute="top" secondItem="dKv-NG-hPY" secondAttribute="bottom" constant="11.5" id="aI9-qL-9bX"/>
-                            <constraint firstItem="x4N-7h-FIX" firstAttribute="top" secondItem="TBz-vD-u9w" secondAttribute="bottom" constant="8" id="dvf-Qk-qs5"/>
-                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="x4N-7h-FIX" secondAttribute="trailing" constant="16" id="jBV-ax-6Yn"/>
-                            <constraint firstItem="dKv-NG-hPY" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="101" id="jeB-lg-OEt"/>
-                            <constraint firstItem="dKv-NG-hPY" firstAttribute="top" secondItem="x4N-7h-FIX" secondAttribute="bottom" constant="16" id="rp5-SI-oof"/>
-                            <constraint firstItem="8DX-ag-iif" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="16" id="vvU-OF-qUb"/>
-                            <constraint firstItem="MHq-lj-a1l" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="101" id="ybK-Ck-bkv"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="trailing" secondItem="Td0-85-UwU" secondAttribute="trailing" constant="27" id="4WE-lW-3hb"/>
+                            <constraint firstItem="9da-um-D5y" firstAttribute="bottom" secondItem="Td0-85-UwU" secondAttribute="bottom" constant="25" id="5DM-Qo-vbe"/>
+                            <constraint firstItem="Td0-85-UwU" firstAttribute="top" secondItem="9da-um-D5y" secondAttribute="top" constant="16" id="o9d-z9-3RV"/>
+                            <constraint firstItem="Td0-85-UwU" firstAttribute="leading" secondItem="9da-um-D5y" secondAttribute="leading" constant="25" id="pMt-iw-6fR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9da-um-D5y"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="Td0-85-UwU" id="EEt-ST-8tN"/>
+                        <outlet property="gameModeValueLabel" destination="fCs-Kt-1to" id="MNK-ep-d1L"/>
+                        <outlet property="pathView" destination="UQK-aA-rAM" id="VYT-te-jI8"/>
                         <outlet property="playAgainButton" destination="8DX-ag-iif" id="3Ia-Uj-xH1"/>
+                        <outlet property="scrollView" destination="xDZ-ce-AiD" id="54K-bU-kzj"/>
                         <segue destination="AxG-dq-4Zh" kind="unwind" identifier="unwindToHomeViewController" unwindAction="unwindToHomeViewControllerWithSegue:" id="csk-Kg-o3b"/>
                     </connections>
                 </viewController>
@@ -640,17 +691,8 @@
         <namedColor name="DarkPurple1">
             <color red="0.21199999749660492" green="0.18799999356269836" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="DarkPurple1">
-            <color red="0.21199999749660492" green="0.18799999356269836" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Purple1">
             <color red="0.5220000147819519" green="0.49799999594688416" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Purple1">
-            <color red="0.52200001480000002" green="0.49799999589999999" blue="0.94099998470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Purple2">
-            <color red="0.40400001410000003" green="0.3799999952" blue="0.69800001379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Purple2">
             <color red="0.40400001410000003" green="0.3799999952" blue="0.69800001379999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
